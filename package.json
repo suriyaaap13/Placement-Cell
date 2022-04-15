@@ -1,0 +1,15 @@
+{
+  "name": "placement-cell",
+  "version": "1.0.0",
+  "description": "An Application to download data about their student's interview reports",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Suriyaa S",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3"
+  }
+}
