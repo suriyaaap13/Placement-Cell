@@ -1,9 +1,13 @@
-module.exports.login = function(req, res){
-    return res.send('<h1>Login Page</h1>');
+module.exports.signIn = function(req, res){
+    return res.render('form', {
+        title: "login"
+    });
 }
-module.exports.register = function(req, res){
-    return res.send('<h1>Register Page</h1>');
+module.exports.signUp = function(req, res){
+    return res.render('form', {
+        title: "register"
+    });
 }
-module.exports.logout = function (req, res){
+module.exports.signOut = function (req, res){
     return res.send('<h1>Logout</h1>');
 }
