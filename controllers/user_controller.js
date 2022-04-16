@@ -4,7 +4,6 @@ const md5 = require('md5');
 module.exports.create = async function(req, res){
     if(req.body.password!=req.body.confirm_password){
         // req.flash('error','Password and confirm password doesnot match');
-        console.log("Password and confirm password doesn't match");
         res.redirect('back');
     }else{
         try{
@@ -31,15 +30,23 @@ module.exports.createSession = function(req, res){
     return res.redirect('/');
 }
 module.exports.signIn = function(req, res){
+    if(req.isAuthenticated()){
+        return res.redirect('/');
+    }
     return res.render('signin', {
         title: "Sign In"
     });
 }
 module.exports.signUp = function(req, res){
+    if(req.isAuthenticated()){
+        return res.redirect('/');
+    }
     return res.render('signup', {
         title: "Sign Up"
     });
 }
 module.exports.signOut = function (req, res){
-    return res.send('<h1>Logout</h1>');
+    req.logout();
+    // req.flash('success', 'Logged Out Successfully');
+    return res.redirect('/users/signin');
 }
