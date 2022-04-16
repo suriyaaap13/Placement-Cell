@@ -9,12 +9,12 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Placement-Cell|<%=title%></title>
+    <title>Placement-Cell | <%=title%></title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
     
     <!-- Custom styles for this template -->
-    <link href="/css/login.css" rel="stylesheet">
+    <%- style %>
   </head>
   <body>
 
@@ -25,22 +25,12 @@
           Placement-Cell
         </a>
         <form class="d-flex">
-            <%if(title=="login"){%>
               <a href="/users/signin">
-                <button type="button" class="btn btn-primary me-2" >Sign-in</button>
+                <button type="button" class="" id="sign-in">Sign-in</button>
               </a>
               <a href="/users/signup">
-                <button type="button" class="btn btn-outline-primary" id="sign-up">Sign-up</button>
+                <button type="button" class="" id="sign-up">Sign-up</button>
               </a>
-              
-            <%}else{%> 
-                <a href="/users/signin">
-                  <button type="button" class="btn btn-outline-primary me-2" >Sign-in</button>
-                </a>
-                <a href="/users/signup">
-                  <button type="button" class="btn btn-primary" id="sign-up">Sign-up</button>
-                </a>
-            <%}%>
         </form>
       </div>
     </nav>

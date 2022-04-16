@@ -1,0 +1,29 @@
+<link href="/css/login.css" rel="stylesheet">
+
+<!-- bootstrap signin form -->
+<div class="text-center">
+    <main class="form-signin">
+        <form action="/users/create-session" method="post">
+            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+            <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" name="email" autocomplete="false" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" name="password" autocomplete="false" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+            </div>
+
+            <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me" checked> Remember me
+            </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+            <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+        </form>
+    </main>
+</div>
+
+<script src="/js/signin.js"></script>

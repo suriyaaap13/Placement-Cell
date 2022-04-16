@@ -1,0 +1,38 @@
+<link href="/css/login.css" rel="stylesheet">
+
+<!-- Sign Up form -->
+<div class="text-center">
+    <main class="form-signin">
+        <form action="/users/create" method="post">
+            <h1 class="h3 mb-3 fw-normal">Register yourself</h1>
+
+            <div class="form-floating">
+              <input type="text" class="form-control" id="floatingInput" name="name"  placeholder="Full Name">
+              <label for="floatingInput">Full Name</label>
+            </div>
+            <div class="checkbox mb-3"></div>
+
+            <div class="form-floating">
+              <input type="email" class="form-control" id="floatingInput" name="email"  placeholder="name@example.com">
+              <label for="floatingInput">Email address</label>
+            </div>
+            <div class="checkbox mb-3">
+            </div>
+            <div class="form-floating">
+              <input type="password" class="form-control" id="floatingPassword" name="password"  placeholder="Password">
+              <label for="floatingPassword">Password</label>
+            </div>
+            <div class="form-floating">
+              <input type="password" class="form-control" id="floatingPassword" name="confirm_password"  placeholder="Confirm Password">
+              <label for="floatingPassword">Confirm Password</label>
+            </div>
+
+            <div class="checkbox mb-3">
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+            <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+        </form>
+    </main>
+  </div>
+
+  <script src="/js/signup.js"></script>
