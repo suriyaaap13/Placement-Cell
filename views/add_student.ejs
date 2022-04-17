@@ -1,3 +1,114 @@
-<h1>
-    Hello World | <%= title %>
-</h1>
+
+<div class="container-fluid w-100  p-5">
+    <div class="container px-3 border rounded">
+        <div class="text-info display-5 py-3">
+            Add Student Form
+        </div>
+        <form action="/posts/create" method="post">
+            <!-- Contains Name and College -->
+            <div class="row text-white my-3">
+                <div class="col-4">
+                    <label for="studentName text-white">Student Name</label>
+                    <input type="text" class="form-control" id="studentName" name="studentName" placeholder="Student Name" required>
+                </div>
+                <div class="col-4">
+                    <label for="collegeName">College Name</label>
+                    <input type="text" class="form-control" id="collegeName" name="collegeName" placeholder="College Name" required>
+                </div>
+                <div class="col-4">
+                    <label for="gender">Gender</label>
+                    <select class="custom-select mr-sm-2 form-control" name="gender" id="gender" required>
+                        <option selected value="female">Female</option>
+                        <option value="male">Male</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Contains Test Score -->
+            <div class="row text-white my-3">
+                <div class="col-4">
+                    <label for="dsa">DSA Score</label>
+                    <select class="custom-select mr-sm-2 form-control" name="dsa" id="dsa" required>
+                        <option selected value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <label for="webd">WebD Score</label>
+                    <select class="custom-select mr-sm-2 form-control" id="webd" name="webd" required>
+                        <option selected value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <label for="react">React Score</label>
+                    <select class="custom-select mr-sm-2 form-control" name="react" id="react" required>
+                        <option selected value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+            </div> 
+            <!-- Contains Company Name, Interview Date and result -->
+            <div class="row text-white my-3">
+                <div class="col-4">
+                    <label for="companyName">Company Name</label>
+                    <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Company Name" required>
+                </div>
+                <div class="col-4">
+                    <label for="doi">D.O.Interview</label>
+                    <input type="date" class="form-control" id="doi" min="2017-01-01" name="doi" max="2022-04-17" required>
+                </div>
+                <div class="col-4">
+                    <label for="result">Result</label>
+                    <select class="custom-select mr-sm-2 form-control" id="result" name="result" required>
+                        <option selected value="pass">Pass</option>
+                        <option value="fail">Fail</option>
+                        <option value="waiting">On Hold</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Contains and Status -->
+            <!-- <div class="row text-white my-3">
+                <div class="col-4">
+                    <label for="status">Placed</label>
+                    <select class="custom-select mr-sm-2 form-control" id="status" required>
+                        <option selected value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+            </div> -->
+            <!-- <div class="row d-flex justify-content-center"> -->
+                <button type="submit" class="col-1 btn btn-primary my-3">Submit</button>
+            <!-- </div>
+             -->
+            
+        </form>
+    </div>
+</div>

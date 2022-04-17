@@ -2,18 +2,18 @@
     
   <%if(locals.user){%>
     <!-- left navigation section -->
-    <div class="container-fluid w-100">
+    <div class="container-fluid bg-dark min-vh-100 w-100">
       <div class="row">
         <!-- Giving padding for the list -->
-          <nav class="col-2 bg-light py-2">
+          <nav class="col-2 bg-dark py-2">
             <!-- Navigation list and their buttons -->
 
             <div class="row py-2">
               <a href="/" class="" style="text-decoration: none;">
-                <button type="button" class="btn btn-outline-primary btn-block mx-2" data-toggle="tooltip" data-placement="top" title="Student Register">
+                <button type="button" class="btn btn-outline-light btn-block mx-2" data-toggle="tooltip" data-placement="top" title="Student Register">
                   <i class=" fa-solid fa-file-arrow-down"></i>
                 </button>
-                <span class="text-capitalize fs-5 d-none d-lg-inline text-primary ">
+                <span class="text-capitalize fs-5 d-none d-lg-inline text-light ">
                   Student Register
                 </span>
               </a>
@@ -21,11 +21,11 @@
 
             <div class="row py-2 ">
               <a href="/" class="" style="text-decoration: none;">
-                <button type="button" class="btn btn-outline-primary btn-block mx-2" data-toggle="tooltip" data-placement="right" title="Interview Register">
+                <button type="button" class="btn btn-outline-light btn-block mx-2" data-toggle="tooltip" data-placement="right" title="Interview Register">
                   <!-- Interview List -->
                   <i class=" fa-solid fa-file-circle-plus"></i>
                 </button>
-                <span class="text-capitalize fs-5 d-none d-lg-inline text-primary">
+                <span class="text-capitalize fs-5 d-none d-lg-inline text-light">
                 Interview Register
               </span>
               </a>
@@ -34,10 +34,10 @@
 
             <div class="row py-2 ">
               <a href="/posts/interview" class=""  style="text-decoration: none;">
-                <button type="button" class="btn btn-outline-primary btn-block mx-2" data-toggle="tooltip" data-placement="right" title="Add Vacancy">
+                <button type="button" class="btn btn-outline-light btn-block mx-2" data-toggle="tooltip" data-placement="right" title="Add Vacancy">
                   <i class=" fa-solid fa-suitcase"></i>
                 </button>
-                <span class="text-capitalize fs-5 d-none d-lg-inline text-primary">
+                <span class="text-capitalize fs-5 d-none d-lg-inline text-light">
                 Add Vacancy
               </span>
               </a>
@@ -46,21 +46,21 @@
             
             <div class="row py-2 ">
               <a href="/posts/student" class="" style="text-decoration: none;">
-                <button type="button" class="btn btn-outline-primary btn-block mx-2"  data-toggle="tooltip" data-placement="right" title="Add Scholar">
+                <button type="button" class="btn btn-outline-light btn-block mx-2"  data-toggle="tooltip" data-placement="right" title="Add Scholar">
                   <i class=" fa-solid fa-user-plus"></i>
                 </button>
-                <span class="text-capitalize fs-5 d-none d-lg-inline text-primary">
+                <span class="text-capitalize fs-5 d-none d-lg-inline text-light">
                 Add Scholar
               </span>
               </a>
               
             </div>         
           </nav>
-          <div class="col-9 h-100">
+          <section class="col-10">
               <%- body %>
-          </div>
+          </section>
       </div>
-  </div>
+    </div>
   <%}else{%>
     <%- body %>
   <%}%>
