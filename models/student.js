@@ -1,24 +1,15 @@
 const mongoose = require('mongoose');
 
 const studentSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    age: {
-        type: Number,
-        required: true
-    },
-    status: {
+    studentName: {
         type: String,
         required: true
     },
-    companyName: {
+    collegeName: {
         type: String,
         required: true
     },
-    result: {
+    gender: {
         type: String,
         required: true
     },
@@ -26,14 +17,30 @@ const studentSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    wd: {
+    webd: {
         type: Number,
         required: true
     },
     react: {
         type: Number,
         required: true
-    }
+    },
+    companyName: {
+        type: String,
+        required: true
+    },
+    doi: {
+        type: Date,
+        required: true
+    },
+    result: {
+        type: String,
+        required: true
+    },
+    status: {
+        type: String,
+        required: true
+    },
 },{
     timestamps: true
 });
