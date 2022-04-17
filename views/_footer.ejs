@@ -15,7 +15,13 @@
     <!-- Styles the home and signout btn in the after login pages -->
     <%if(locals.user){%>
       <script src="/js/home.js"></script>
+      <script>
+        $(function () {
+          $('[data-toggle="tooltip"]').tooltip({placement: 'right'});
+        })
+      </script>
     <%}%>
+    
     <!-- Custom JS files -->
     <%- script %>
     
