@@ -1,5 +1,44 @@
 <%- include('_header'); %>
     
-  <%- body %>
+  <%if(locals.user){%>
+    <!-- left navigation section -->
+    <div class=" container-fluid w-100">
+      <div class="row ">
+        <!-- Giving padding for the list -->
+          <nav class="col-3 p-5 bg-light">
+            <!-- Navigation list and their buttons -->
+              <ul class="list-group list-group-flush max-vh-100">
+                  <li class="list-group-item p-5 bg-transparent">
+                    <a href="/">
+                      <button type="button" class="btn btn-outline-primary btn-lg btn-block">Student List</button>
+                    </a>
+                  </li>
+                  <li class="list-group-item p-5 bg-transparent">
+                    <a href="/">
+                      <button type="button" class="btn btn-outline-primary btn-lg btn-block">Interview List</button>
+                    </a>
+                  </li>
+                  <li class="list-group-item p-5 bg-transparent">
+                    <a href="/posts/interview">
+                      <button type="button" class="btn btn-outline-primary btn-lg btn-block">Post Interview</button>
+                    </a>
+                  </li>
+                  <li class="list-group-item p-5 bg-transparent">
+                    <a href="/posts/students">
+                      <button type="button" class="btn btn-outline-primary btn-lg btn-block">Add Student</button>
+                    </a>
+                  </li>
+              </ul>
+          </nav>
+          <div class="col-9 h-100">
+              <%- body %>
+          </div>
+      </div>
+      
+  </div>
+  <%}else{%>
+    <%- body %>
+  <%}%>
+  
         
 <%- include('_footer'); %>

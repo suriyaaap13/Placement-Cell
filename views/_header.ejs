@@ -19,13 +19,16 @@
   <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-info navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          Placement-Cell
+          <i class="fa-2x fa-solid fa-arrow-up-right-dots"></i>
+          <span class="display-6">
+            Placement-Cell
+          </span>
         </a>
         <% if(locals.user){ %>
-          <form class="d-flex">
+          <div class="d-flex">
             <a href="/">
               <button type="button" id="home">Home</button>
             </a>
@@ -38,16 +41,16 @@
             <a href="/users/signout">
               <button type="button" id="sign-out">Sign-out</button>
             </a>
-          </form>
+          </div>
         <% }else{ %>
-          <form class="d-flex">
+          <div class="d-flex">
                 <a href="/users/signin">
                   <button type="button" class="" id="sign-in">Sign-in</button>
                 </a>
                 <a href="/users/signup">
                   <button type="button" class="" id="sign-up">Sign-up</button>
                 </a>
-          </form>
+          </div>
         <% } %>
       </div>
     </nav>
