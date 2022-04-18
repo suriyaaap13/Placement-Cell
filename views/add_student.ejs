@@ -1,31 +1,26 @@
-<div class="container-fluid w-100  p-5">
-    <div class="container px-3 border rounded">
-        <div class="text-info display-5 py-3">
+<div class="container-fluid  p-5">
+    <div class="container col-sm-12 col-md-10 col-lg-5 bg-warning p-4 border rounded">
+        <div class="text-dark display-5 py-3">
             Add Student Form
         </div>
         <form action="/posts/create" method="post">
             <!-- Contains Name and College -->
             <div class="row text-white my-3">
-                <div class="col-4">
+                <div class="col-sm-12">
                     <label for="studentName text-white">Student Name</label>
                     <input type="text" class="form-control" id="studentName" name="studentName" placeholder="Student Name" required>
                 </div>
-                <div class="col-4">
+            </div>
+            <!-- Contains College Name -->
+            <div class="row text-white my-3">
+                <div class="col-sm-12">
                     <label for="collegeName">College Name</label>
                     <input type="text" class="form-control" id="collegeName" name="collegeName" placeholder="College Name" required>
-                </div>
-                <div class="col-4">
-                    <label for="gender">Gender</label>
-                    <select class="custom-select mr-sm-2 form-control" name="gender" id="gender" required>
-                        <option  value="Female">Female</option>
-                        <option selected value="Male">Male</option>
-                        <option value="others">Others</option>
-                    </select>
                 </div>
             </div>
             <!-- Contains Test Score -->
             <div class="row text-white my-3">
-                <div class="col-4">
+                <div class="col-sm-auto">
                     <label for="dsa">DSA Score</label>
                     <select class="custom-select mr-sm-2 form-control" name="dsa" id="dsa" required>
                         <option selected value="0">0</option>
@@ -41,7 +36,7 @@
                         <option value="10">10</option>
                     </select>
                 </div>
-                <div class="col-4">
+                <div class="col-sm-auto">
                     <label for="webd">WebD Score</label>
                     <select class="custom-select mr-sm-2 form-control" id="webd" name="webd" required>
                         <option selected value="0">0</option>
@@ -57,7 +52,7 @@
                         <option value="10">10</option>
                     </select>
                 </div>
-                <div class="col-4">
+                <div class="col-sm-auto">
                     <label for="react">React Score</label>
                     <select class="custom-select mr-sm-2 form-control" name="react" id="react" required>
                         <option selected value="0">0</option>
@@ -73,38 +68,17 @@
                         <option value="10">10</option>
                     </select>
                 </div>
-            </div> 
-            <!-- Contains Company Name, Interview Date and result -->
-            <div class="row text-white my-3">
-                <div class="col-4">
-                    <label for="companyName">Company Name</label>
-                    <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Company Name" required>
-                </div>
-                <div class="col-4">
-                    <label for="doi">D.O.Interview</label>
-                    <input type="date" class="form-control" id="doi" min="2017-01-01" name="doi" max="2022-04-17" required>
-                </div>
-                <div class="col-4">
-                    <label for="result">Result</label>
-                    <select class="custom-select mr-sm-2 form-control" id="result" name="result" required>
-                        <option selected value="Pass">Pass</option>
-                        <option value="Fail">Fail</option>
-                        <option value="On Hold">On Hold</option>
-                    </select>
-                </div>
-            </div>
-            <!-- Contains and Status -->
-            <div class="row text-white my-3">
-                <div class="col-4">
-                    <label for="status">Placed</label>
+                <!-- Contains Status of the student -->
+                <div class="col-sm-auto">
+                    <label for="status">Status</label>
                     <select class="custom-select mr-sm-2 form-control" name="status" id="status" required>
-                        <option selected value="No">No</option>
-                        <option value="Yes">Yes</option>
+                        <option selected value="Placed">Placed</option>
+                        <option value="Not Placed">Not Placed</option>
                     </select>
                 </div>
-            </div>
-            <div class="row d-flex justify-content-center">
-                <button type="submit" class="col-5 btn btn-primary my-3">Submit</button>
+            </div> 
+            <div class="row d-flex justify-content-start">
+                <button type="submit" class="col-auto btn btn-primary m-3">Submit</button>
             </div>
         </form>
     </div>

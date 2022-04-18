@@ -11,6 +11,11 @@ module.exports.create = async (req, res)=>{
     }catch(err){
         console.log("Error "+ err);
         return res.redirect('back');
-    }
-    
+    }   
+}
+// renders the company form
+module.exports.companyData = (req, res)=>{
+    return res.render('add_company', {
+        title: "Add Company Form"
+    });
 }

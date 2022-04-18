@@ -1,0 +1,42 @@
+<div class="container-fluid w-100  p-5">
+    <div class="container col-sm-12 col-md-10 col-lg-5 bg-warning p-4 border rounded">
+        <div class="text-dark display-5 py-3">
+            Add Company Form
+        </div>
+        <form action="/" method="post">
+            <!-- Contains Company Name, Interview Date and result -->
+            <div class="row text-dark my-3">
+                <div class="col-sm-auto d-flex align-items-center justify-content-center fs-5">
+                    <label for="result">Company Name</label>
+                </div>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Company Name" required>
+                </div>
+            </div>
+            <div class="row text-dark my-3">
+                <div class="col-sm-auto d-flex align-items-center justify-content-center fs-5">
+                    <label for="result">Date Of Interview</label>
+                </div>
+                <div class="col-sm-12">
+                    
+                    <input type="date" class="form-control" id="doi" min="2017-01-01" name="doi" max="2022-04-17" required>
+                </div>
+            </div>
+            <div class="row text-dark my-3">
+                <div class="col-sm-auto d-flex align-items-center justify-content-center fs-5">
+                    <label for="result">Result</label>
+                </div>
+                <div class="col-sm-auto">
+                    <select class="custom-select mr-sm-2 form-control" id="result" name="result" required>
+                        <option selected value="Pass">Pass</option>
+                        <option value="Fail">Fail</option>
+                        <option value="On Hold">On Hold</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <button type="submit" class="col-auto btn btn-primary my-3">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
