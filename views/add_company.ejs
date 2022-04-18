@@ -3,7 +3,7 @@
         <div class="text-dark display-5 py-3">
             Add Company Form
         </div>
-        <form action="/" method="post">
+        <form action="/posts/company" method="post">
             <!-- Contains Company Name, Interview Date and result -->
             <div class="row text-dark my-3">
                 <div class="col-sm-auto d-flex align-items-center justify-content-center fs-5">
@@ -22,7 +22,41 @@
                     <input type="date" class="form-control" id="doi" min="2017-01-01" name="doi" max="2022-04-17" required>
                 </div>
             </div>
+            <!-- jobless Students List  -->
             <div class="row text-dark my-3">
+                <div class="col-sm-auto d-flex align-items-center justify-content-center fs-5">
+                    <label for="result">Student List</label>
+                </div>
+                <div class="col-sm-12">
+                    <select class="country p-2 col-12" multiple name="" id="" required>
+                        <!-- <option value="">America</option>
+                        <option value="">Australia</option>
+                        <option value="">England</option>
+                        <option value="">Scotland</option>
+                        <option value="">India</option>
+                        <option value="">Sri lanka</option>
+                        <option value="">Bangladesh</option>
+                        <option value="">Pakistan</option>
+                        <option value="">Afganistan</option>
+                        <option value="">Saudi Arabia</option> -->
+                        <% jobless.forEach(function(element){ %>
+                            <option value="element._id">
+                                <%= element.studentName %>
+                            </option>
+                        <% }); %>
+                    </select>
+                    <!-- <select class="select col-sm-12 p-2" multiple='multiple' required>
+                        <option>Student LIst</option>
+                        <% jobless.forEach(function(element){ %>
+                            <option>
+                                <%= element.studentName %>
+                            </option>
+                        <% }); %>
+                    </select> -->
+                </div>
+            </div>
+
+            <!-- <div class="row text-dark my-3">
                 <div class="col-sm-auto d-flex align-items-center justify-content-center fs-5">
                     <label for="result">Result</label>
                 </div>
@@ -33,7 +67,7 @@
                         <option value="On Hold">On Hold</option>
                     </select>
                 </div>
-            </div>
+            </div> -->
             <div class="row d-flex justify-content-center">
                 <button type="submit" class="col-auto btn btn-primary my-3">Submit</button>
             </div>
