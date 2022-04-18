@@ -1,1 +1,36 @@
-<h1>Content page | <%= title %> </h1>
+<div class="table-responsive-md">
+  <table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th scope="col-auto">S.No</th>
+        <th scope="col-auto">Student Name</th>
+        <th scope="col-auto">College Name</th>
+        <th scope="col-auto">gender</th>
+        <th scope="col-auto">DSA</th>
+        <th scope="col-auto">Webd</th>
+        <th scope="col-auto">React</th>
+        <th scope="col-auto">Company Name</th>
+        <th scope="col-auto">D.O.Intvw</th>
+        <th scope="col-auto">Result</th>
+        <th scope="col-auto">Placed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% student.forEach(function(element, i){ %>
+        <tr>
+          <th scope="row"><%= i+1 %></th>
+          <td><%= element.studentName %></td>
+          <td><%= element.collegeName %></td>
+          <td><%= element.gender %></td>
+          <td><%= element.dsa %></td>
+          <td><%= element.webd %></td>
+          <td><%= element.react %></td>
+          <td><%= element.companyName %></td>
+          <td><%= helper.convert(element.doi) %></td>
+          <td><%= element.result %></td>
+          <td><%= element.status %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>

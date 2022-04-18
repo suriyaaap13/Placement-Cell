@@ -1,11 +1,11 @@
 <link href="/css/login.css" rel="stylesheet">
 
 <!-- bootstrap signin form -->
-<div class="text-center">
+<div class="text-center bg-dark min-vh-100">
     <main class="form-signin">
         <form action="/users/create-session" method="post">
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
+            <i class="fa-5x fa-solid fa-arrow-up-right-dots py-2" style="color: #24a0ed"></i>
+            <h1 class="h3 mb-3 fw-normal text-white">Please sign in</h1>
             <div class="form-floating">
             <input type="email" class="form-control" id="floatingInput" name="email" autocomplete="false" placeholder="name@example.com">
             <label for="floatingInput">Email address</label>
@@ -14,10 +14,9 @@
             <input type="password" class="form-control" id="floatingPassword" name="password" autocomplete="false" placeholder="Password">
             <label for="floatingPassword">Password</label>
             </div>
-
-            <div class="checkbox mb-3">
+            <div class="checkbox mb-3 text-white">
             <label>
-                <input type="checkbox" value="remember-me" checked> Remember me
+                <input type="checkbox" value="remember-me" class="" checked> Remember me
             </label>
             </div>
             <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
