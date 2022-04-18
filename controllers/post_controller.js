@@ -7,8 +7,10 @@ module.exports.studentData = (req, res)=>{
 module.exports.create = async (req, res)=>{
     try{
         await Student.create(req.body);
+        return res.redirect('/');
     }catch(err){
         console.log("Error "+ err);
+        return res.redirect('back');
     }
-    return res.redirect('back');
+    
 }
