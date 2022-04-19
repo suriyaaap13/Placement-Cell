@@ -4,10 +4,11 @@
     <!-- left navigation section -->
     <div class="container-fluid bg-dark min-vh-100 w-100">
       <div class="row">
-        <!-- Giving padding for the list -->
-          <nav class="col-2 bg-dark py-2">
+        <div class="p-0 m-0 col-2 bg-dark">
+          <!-- Navigation icons of the page -->
+          <nav class=" border-top-0 border-start-0 border-bottom-0 border border-white min-vh-100 py-2">
             <!-- Navigation list and their buttons -->
-
+            <!-- Button Student Register -->
             <div class="row py-2">
               <a href="/" class="" style="text-decoration: none;">
                 <button type="button" class="btn btn-outline-light btn-block mx-2" data-toggle="tooltip" data-placement="top" title="Student Register">
@@ -18,9 +19,9 @@
                 </span>
               </a>
             </div>
-
+            <!-- Button Interview Register -->
             <div class="row py-2 ">
-              <a href="/" class="" style="text-decoration: none;">
+              <a href="/posts/company-list" class="" style="text-decoration: none;">
                 <button type="button" class="btn btn-outline-light btn-block mx-2" data-toggle="tooltip" data-placement="right" title="Interview Register">
                   <!-- Interview List -->
                   <i class=" fa-solid fa-file-circle-plus"></i>
@@ -31,7 +32,7 @@
               </a>
               
             </div>
-
+            <!-- Button Add Vacancy -->
             <div class="row py-2 ">
               <a href="/posts/company" class=""  style="text-decoration: none;">
                 <button type="button" class="btn btn-outline-light btn-block mx-2" data-toggle="tooltip" data-placement="right" title="Add Vacancy">
@@ -43,7 +44,7 @@
               </a>
               
             </div>
-            
+            <!--  -->
             <div class="row py-2 ">
               <a href="/posts/student" class="" style="text-decoration: none;">
                 <button type="button" class="btn btn-outline-light btn-block mx-2"  data-toggle="tooltip" data-placement="right" title="Add Scholar">
@@ -56,9 +57,12 @@
               
             </div>         
           </nav>
-          <section class="col">
-              <%- body %>
-          </section>
+        </div>
+          
+        <!-- Main Body -->
+        <section class="col">
+            <%- body %>
+        </section>
       </div>
     </div>
   <%}else{%>

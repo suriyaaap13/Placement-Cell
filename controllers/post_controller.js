@@ -37,5 +37,11 @@ module.exports.createCompany = async (req, res)=>{
     //     student.push(temp)
     // });
     // console.log(student);
-    return res.redirect('back');
+    return res.redirect('/posts/company-list');
+}
+// Display interview list
+module.exports.companyList = async (req, res)=>{
+    res.render('interview_register',{
+        title: "Interview Register"
+    })
 }
