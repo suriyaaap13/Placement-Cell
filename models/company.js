@@ -8,7 +8,7 @@ const companySchema = new mongoose.Schema({
         type: Date,
         required: true
     },
-    result: [
+    students: [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Student'

@@ -7,10 +7,10 @@ const postController = require('../controllers/post_controller');
 // renders the student form
 router.get('/student', passport.checkAuthentication, postController.studentForm);
 // posts student data to the db
-router.post('/create-student', postController.createStudent);
+router.post('/create-student', passport.checkAuthentication, postController.createStudent);
 // renders the company form
 router.get('/company', passport.checkAuthentication, postController.companyForm)
 // posts student data to the db
-router.post('/create-company', postController.createCompany);
+router.post('/create-company', passport.checkAuthentication, postController.createCompany);
 
 module.exports = router;

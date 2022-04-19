@@ -29,7 +29,13 @@ const studentSchema = new mongoose.Schema({
     status: {
         type: String,
         required: true
-    }
+    },
+    companies: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Company'
+        }
+    ]
 },{
     timestamps: true
 });
