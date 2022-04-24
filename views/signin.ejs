@@ -1,26 +1,20 @@
-<link href="/css/login.css" rel="stylesheet">
+<link href="/css/signin.css" rel="stylesheet">
 
 <!-- bootstrap signin form -->
-<div class="text-center min-vh-80">
+<div class="text-center min-vh-100 ">
     <main class="form-signin">
         <form action="/users/create-session" method="post">
-            <i class="fa-5x fa-solid fa-arrow-up-right-dots" style="color: #24a0ed"></i>
-            <h1 class="h3 mb-3 fw-normal text-white">Please sign in</h1>
+            <h1 class="h3 my-3 fw-normal text-dark">Please sign in</h1>
             <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" name="email" autocomplete="false" placeholder="name@example.com">
+            <input type="email" class="form-control" id="floatingInput" name="email" autocomplete="false" placeholder="name@example.com" required>
             <label for="floatingInput">Email address</label>
             </div>
             <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" name="password" autocomplete="false" placeholder="Password">
+            <input type="password" class="form-control" id="floatingPassword" name="password" autocomplete="false" placeholder="Password" required>
             <label for="floatingPassword">Password</label>
             </div>
-            <div class="checkbox mb-3 text-white">
-            <label>
-                <input type="checkbox" value="remember-me" class="" checked> Remember me
-            </label>
-            </div>
+            <div class="my-4"></div>
             <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
         </form>
     </main>
 </div>

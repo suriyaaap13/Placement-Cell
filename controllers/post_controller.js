@@ -1,5 +1,6 @@
 const Student = require('../models/student');
 const Company = require('../models/company');
+const helper = require('./helper');
 // render student form
 module.exports.studentForm = (req, res)=>{
     return res.render('add_student', {
@@ -30,18 +31,14 @@ module.exports.companyForm = async (req, res)=>{
 module.exports.createCompany = async (req, res)=>{
     Company.create(req.body);
     const allotedStudents = await req.body.students;
-    // let student = [];
-    // allotedStudents.forEach(async (element)=>{
-    //     const temp = await Student.findById(element);
-    //     console.log(temp);
-    //     student.push(temp)
-    // });
-    // console.log(student);
     return res.redirect('/posts/company-list');
 }
 // Display interview list
 module.exports.companyList = async (req, res)=>{
+    const company = await Company.find({}).populate('students');
     res.render('interview_register',{
-        title: "Interview Register"
-    })
+        title: "Interview Register",
+        company: company,
+        helper: helper
+    });
 }

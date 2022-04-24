@@ -1,0 +1,33 @@
+<h2 class="text-white">
+    Interview Register 
+</h2>
+<div class="fs-4 text-danger">
+    Note: "Click on the student if he is selected"
+</div>
+<div class="row" id="company-content">
+    <% company.forEach((element)=>{ %>
+        <div class="col-sm-4 mb-2">
+            <div class="card">
+                <div class="card-body">
+                    <span class="text-danger" style="font-weight: 700;">
+                        <%= element.companyName %>
+                    </span>
+                     Conducted an Interview on 
+                     <span class="text-primary" style="font-weight: 700;">
+                        <%= helper.convert(element.doi) %>
+                     </span>
+                     the alloted students are
+                </div>
+                <ul class="list-group p-2">
+                    <% element.students.forEach((std)=>{ %>
+                        <li class="list-group-item list-group-item-dark" id="student-list-item-<%= std._id %>">
+                            <%= std.studentName %>
+                        </li>
+                    <% }) %>
+                </ul>
+                
+            </div>
+        </div>
+    <% }); %>
+</div>
+<script src="/js/interview_register.js"></script>

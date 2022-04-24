@@ -17,20 +17,22 @@
     <link rel="stylesheet" href="/css/chosen.css">
 
     <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="/css/header.css">
     <%- style %>
   </head>
   <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-light bg-dark navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-light bg-light navbar-default shadow p-3 mb-5 fixed-header bg-white rounded">
       <div class="container-fluid">
-        <a class="navbar-brand text-info" href="#">
+        <a class="navbar-brand text-dark " href="#" >
           <i class="fa-2x fa-solid fa-arrow-up-right-dots"></i>
           <span class="display-6  d-none d-lg-inline">
             Placement-Cell
           </span>
         </a>
         <% if(locals.user){ %>
+          <!-- Home and signout btn if user is logged in -->
           <div class="d-flex">
             <a href="/">
               <button type="button" id="home">Home</button>
@@ -46,6 +48,7 @@
             </a>
           </div>
         <% }else{ %>
+          <!-- Signin and Sign Out btns if user is not logged in -->
           <div class="d-flex">
                 <a href="/users/signin">
                   <button type="button" class="" id="sign-in">Sign-in</button>
