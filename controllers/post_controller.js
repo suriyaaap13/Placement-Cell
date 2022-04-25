@@ -1,12 +1,8 @@
 const Student = require('../models/student');
 const Company = require('../models/company');
 const helper = require('./helper');
-// render student form
-module.exports.studentForm = (req, res)=>{
-    return res.render('add_student', {
-        title: "Add Student Form"
-    });
-}
+
+
 // save the student data
 module.exports.createStudent = async (req, res)=>{
     try{
@@ -29,7 +25,7 @@ module.exports.companyForm = async (req, res)=>{
 }
 // save the company data
 module.exports.createCompany = async (req, res)=>{
-    Company.create(req.body);
+    await Company.create(req.body);
     const allotedStudents = await req.body.students;
     return res.redirect('/posts/company-list');
 }

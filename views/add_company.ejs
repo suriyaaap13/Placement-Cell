@@ -1,48 +1,57 @@
-<div class="container-fluid w-100">
-    <div class="container col-sm-12 col-md-10 col-lg-5 bg-warning border rounded">
-        <div class="text-dark display-5 py-3">
-            Add Company Form
+<div class="row w-100 min-vh-100 mt-5 pt-4">
+    <section class="col-md-5 border border-top-0" style="background: #eee; background-image: url(/images/bg-form.png);">
+        <div>
+            <div class="d-flex align-items-center justify-content-center h3 py-5">
+                Company Form
+            </div>
+            <form action="/posts/create-company" method="post">
+                <!-- Contains Company Name -->
+                <div class="row text-dark my-3 px-4">
+                    <div class="col-sm-auto d-flex align-items-center justify-content-center fs-5">
+                        <label for="result">Company Name</label>
+                    </div>
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Company Name" required>
+                    </div>
+                </div>
+                <!-- Date of Interview -->
+                <div class="row text-dark my-3 px-4">
+                    <div class="col-sm-auto d-flex align-items-center justify-content-center fs-5">
+                        <label for="result">Date Of Interview</label>
+                    </div>
+                    <div class="col-sm-12">
+                        
+                        <input type="date" class="form-control" id="doi" min="2017-01-01" name="doi" max="2022-04-17" required>
+                    </div>
+                </div>
+                <!-- jobless Students List  -->
+                <div class="row text-dark my-3 px-4">
+                    <div class="col-sm-auto fs-5">
+                        <label for="result">Student List</label>
+                    </div>
+                    <div class="col-sm-12">
+                        <!-- Multiple select dropdown box -->
+                        <select class="country" multiple name="students" id="" required>
+                            <% jobless.forEach(function(element){ %>
+                                <option value="<%= element._id %>">
+                                    <%= element.studentName %>
+                                </option>
+                            <% }); %>
+                        </select>
+                    </div>
+                </div>
+                <!-- Submit button -->
+                <div class="row d-flex justify-content-center">
+                    <button type="submit" class="col-auto btn btn-primary my-3">Submit</button>
+                </div>
+            </form>
         </div>
-        <form action="/posts/create-company" method="post">
-            <!-- Contains Company Name -->
-            <div class="row text-dark my-3">
-                <div class="col-sm-auto d-flex align-items-center justify-content-center fs-5">
-                    <label for="result">Company Name</label>
-                </div>
-                <div class="col-sm-12">
-                    <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Company Name" required>
-                </div>
-            </div>
-            <!-- Date of Interview -->
-            <div class="row text-dark my-3">
-                <div class="col-sm-auto d-flex align-items-center justify-content-center fs-5">
-                    <label for="result">Date Of Interview</label>
-                </div>
-                <div class="col-sm-12">
-                    
-                    <input type="date" class="form-control" id="doi" min="2017-01-01" name="doi" max="2022-04-17" required>
-                </div>
-            </div>
-            <!-- jobless Students List  -->
-            <div class="row text-dark my-3">
-                <div class="col-sm-auto d-flex align-items-center justify-content-center fs-5">
-                    <label for="result">Student List</label>
-                </div>
-                <div class="col-sm-12">
-                    <!-- Multiple select dropdown box -->
-                    <select class="country" multiple name="students" id="" required>
-                        <% jobless.forEach(function(element){ %>
-                            <option value="<%= element._id %>">
-                                <%= element.studentName %>
-                            </option>
-                        <% }); %>
-                    </select>
-                </div>
-            </div>
-            <!-- Submit button -->
-            <div class="row d-flex justify-content-center">
-                <button type="submit" class="col-auto btn btn-primary my-3">Submit</button>
-            </div>
-        </form>
-    </div>
+    </section>
+    
+    <section class="col-md-7">
+        <div ></div>  
+    </section>
+        
+    
 </div>
+<script src="/js/company.js"></script>
