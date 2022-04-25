@@ -1,32 +1,52 @@
-<div class="table-responsive-md">
-  <table class="table table-hover table-dark">
-    <thead>
-      <tr>
-        <th scope="col-auto">S.No</th>
-        <th scope="col-auto">Student Name</th>
-        <th scope="col-auto">College Name</th>
-        <th scope="col-auto">DSA</th>
-        <th scope="col-auto">W Dev.</th>
-        <th scope="col-auto">React</th>
-        <!-- <th scope="col-auto">Company Name</th>
-        <th scope="col-auto">D.O.Intvw</th>
-        <th scope="col-auto">Result</th> -->
-        <th scope="col-auto">Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% student.forEach(function(element, i){ %>
-        <tr>
-          <th scope="row"><%= i+1 %></th>
-          <td><%= element.studentName %></td>
-          <td><%= element.collegeName %></td>
-          <td><%= element.dsa %></td>
-          <td><%= element.webd %></td>
-          <td><%= element.react %></td>
-          
-          <td><%= element.status %></td>
-        </tr>
-      <% }); %>
-    </tbody>
-  </table>
+<link rel="stylesheet" href="/css/home.css">
+
+<div class="mt-5 pt-5 row">
+  
+  <section class="col-md-5 border border-top-0 border-left-0">
+    <div class="d-flex align-items-center justify-content-center h3 py-3 ">
+      Student Form
+    </div>
+  </section>
+  <section class="col-md-7">
+    <div class="table-responsive-md min-vh-100">
+      <div class="d-flex align-items-center justify-content-center">
+        <div class="h3 p-3">
+          Student Details
+        </div>
+      </div>
+      <table class="table table-hover">
+        <thead >
+          <tr>
+            <th scope="col-auto">S.No</th>
+            <th scope="col-auto">Student Name</th>
+            <th scope="col-auto">College Name</th>
+            <th scope="col-auto">DSA</th>
+            <th scope="col-auto">W Dev.</th>
+            <th scope="col-auto">React</th>
+            <!-- <th scope="col-auto">Company Name</th>
+            <th scope="col-auto">D.O.Intvw</th>
+            <th scope="col-auto">Result</th> -->
+            <th scope="col-auto">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% student.forEach(function(element, i){ %>
+            <tr>
+              <th scope="row"><%= i+1 %></th>
+              <td><%= element.studentName %></td>
+              <td><%= element.collegeName %></td>
+              <td><%= element.dsa %></td>
+              <td><%= element.webd %></td>
+              <td><%= element.react %></td>
+              
+              <td><%= element.status %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
 </div>
+
+

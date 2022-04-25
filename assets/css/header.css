@@ -1,3 +1,6 @@
+body{
+  overflow-x: hidden;
+}
 .fixed-header{
   position: fixed;
   width: 100%;
