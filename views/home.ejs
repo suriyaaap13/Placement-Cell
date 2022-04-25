@@ -1,10 +1,96 @@
 <link rel="stylesheet" href="/css/home.css">
 
 <div class="mt-5 pt-5 row">
-  
   <section class="col-md-5 border border-top-0 border-left-0">
     <div class="d-flex align-items-center justify-content-center h3 py-3 ">
       Student Form
+    </div>
+    <div class="container-fluid ">
+      <form action="/posts/create-student" method="post">
+          <!-- Contains Student Name -->
+          <div class="row text-white my-3">
+              <div class="col-sm-12">
+                  <label for="studentId">Student Id</label>
+                  <input type="text" class="form-control" id="studentId" name="studentId" placeholder="Student Id" required>
+              </div>
+          </div>
+          <!-- Contains Student Name -->
+          <div class="row text-white my-3">
+              <div class="col-sm-12">
+                  <label for="studentName">Student Name</label>
+                  <input type="text" class="form-control" id="studentName" name="studentName" placeholder="Student Name" required>
+              </div>
+          </div>
+          <!-- Contains College Name -->
+          <div class="row text-white my-3">
+              <div class="col-sm-12">
+                  <label for="collegeName">College Name</label>
+                  <input type="text" class="form-control" id="collegeName" name="collegeName" placeholder="College Name" required>
+              </div>
+          </div>
+          <!-- Contains Test Score -->
+          <div class="row text-dark my-4">
+              <div class="col-sm-auto">
+                  <label for="dsa">DSA Score</label>
+                  <select class="custom-select form-select form-control my-2" name="dsa" id="dsa" required>
+                      <option selected value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                  </select>
+              </div>
+              <div class="col-sm-auto">
+                  <label for="webd">WebD Score</label>
+                  <select class="custom-select form-select form-control my-2" id="webd" name="webd" required>
+                      <option selected value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                  </select>
+              </div>
+              <div class="col-sm-auto">
+                  <label for="react">React Score</label>
+                  <select class="custom-select form-select form-control my-2" name="react" id="react" required>
+                      <option selected value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                  </select>
+              </div>
+              <!-- Contains Status of the student -->
+              <div class="col-sm-auto">
+                  <label for="status">Status</label>
+                  <select class="custom-select form-select form-control my-2" name="status" id="status" required>
+                      <option selected value="Placed">Placed</option>
+                      <option value="Not Placed">Not Placed</option>
+                  </select>
+              </div>
+          </div> 
+          <div class="row d-flex justify-content-center">
+              <button type="submit" class="col-auto btn btn-primary m-3">Submit</button>
+          </div>
+      </form>
     </div>
   </section>
   <section class="col-md-7">
@@ -46,7 +132,6 @@
       </table>
     </div>
   </section>
-  
 </div>
 
 
