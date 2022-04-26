@@ -1,0 +1,124 @@
+<div class="row w-100 min-vh-100 mt-5 pt-4">
+    <section class="col-md-4 border border-top-0" style="background: #eee; background-image: url(/images/bg-form.png);">
+        <div>
+            <div class="d-flex align-items-center justify-content-center h3 py-5">
+                Company Form
+            </div>
+            <form action="/posts/create-company" method="post">
+                <!-- Contains Company Name -->
+                <div class="row text-dark my-3 px-4">
+                    <div class="col-sm-auto d-flex align-items-center justify-content-center fs-5">
+                        <label for="result">Company Name</label>
+                    </div>
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Company Name" required>
+                    </div>
+                </div>
+                <!-- Date of Interview -->
+                <div class="row text-dark my-3 px-4">
+                    <div class="col-sm-auto d-flex align-items-center justify-content-center fs-5">
+                        <label for="result">Date Of Interview</label>
+                    </div>
+                    <div class="col-sm-12">
+                        
+                        <input type="date" class="form-control" id="doi" min="2017-01-01" name="doi" max="2022-04-17" required>
+                    </div>
+                </div>
+                <!-- jobless Students List  -->
+                <div class="row text-dark my-3 px-4">
+                    <div class="col-sm-auto fs-5">
+                        <label for="result">Student List</label>
+                    </div>
+                    <div class="col-sm-12">
+                        <!-- Multiple select dropdown box -->
+                        <select class="country" multiple name="students" id="" required>
+                            <% jobless.forEach(function(element){ %>
+                                <option value="<%= element._id %>">
+                                    <%= element.studentName %>
+                                </option>
+                            <% }); %>
+                        </select>
+                    </div>
+                </div>
+                <!-- Submit button -->
+                <div class="row d-flex justify-content-center">
+                    <button type="submit" class="col-auto btn btn-primary my-3">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <section class="col-md-8 bg-light" style="background: #f8f9fa; background-image: url(/images/bg-table.png);">
+        <div class="w-100">
+            <h2 class="d-flex align-items-center justify-content-center h3 py-5">
+                Company Register 
+            </h2>
+            <div class="row mx-3" id="company-content">
+                <% company.forEach((element)=>{ %>
+                <div class="col-sm-4 mb-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div class="">
+                                    <h5 class="card-title"><%= element.companyName %></h5>
+                                    <h6 class="card-subtitle mb-2 text-muted"><%= helper.convert(element.doi) %></h6>
+                                </div>
+                                <% if(false){ %>
+                                    <div class="">
+                                        <!-- <i class="text-success fa-2x fa-regular fa-circle-check"></i> -->
+                                        <i class="text-warning fa-2x fa-regular fa-hourglass"></i>
+                                    </div>
+                                <% }else{%> 
+                                    <div class="">
+                                        <i class="text-success fa-2x fa-regular fa-circle-check"></i>
+                                    </div>
+                                <%} %>
+                                
+                            </div>
+                            
+                            
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <!-- <a href="#" class="card-link">Card link</a> -->
+                            <% if(false){ %>
+                                <a href="#" class="card-link">Add Result</a>
+                            <% }else{ %>
+                                <a href="#" class="card-link">View Result</a>
+                            <% } %>
+                            
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+                
+                <!-- <% company.forEach((element)=>{ %>
+                    <div class="col-sm-4 mb-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <span class="text-danger" style="font-weight: 700;">
+                                    <%= element.companyName %>
+                                </span>
+                                 Conducted an Interview on 
+                                 <span class="text-primary" style="font-weight: 700;">
+                                    <%= helper.convert(element.doi) %>
+                                 </span>
+                                 the alloted students are
+                            </div>
+                            <ul class="list-group p-2">
+                                <% element.students.forEach((std)=>{ %>
+                                    <li class="list-group-item list-group-item-dark" id="student-list-item-<%= std._id %>">
+                                        <%= std.studentName %>
+                                    </li>
+                                <% }) %>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                <% }); %> -->
+            </div>
+        </div>  
+    </section>
+        
+    
+</div>
+<script src="/js/company.js"></script>
+<script src="/js/interview_register.js"></script>

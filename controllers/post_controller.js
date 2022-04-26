@@ -17,17 +17,19 @@ module.exports.createStudent = async (req, res)=>{
 module.exports.companyForm = async (req, res)=>{
     // Taking the students who are not placed and sending it to the company form to render
     const jobless = await Student.find({status: "Not Placed"});
-    
-    return res.render('add_company', {
+    const company = await Company.find({}).populate('students');
+    return res.render('company_register', {
         title: "Add Company Form",
-        jobless: jobless
+        jobless: jobless,
+        company: company,
+        helper: helper
     });
 }
 // save the company data
 module.exports.createCompany = async (req, res)=>{
     await Company.create(req.body);
     const allotedStudents = await req.body.students;
-    return res.redirect('/posts/company-list');
+    return res.redirect('/posts/company');
 }
 // Display interview list
 module.exports.companyList = async (req, res)=>{
