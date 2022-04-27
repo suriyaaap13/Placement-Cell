@@ -63,7 +63,6 @@ module.exports.companyList = async (req, res)=>{
 }
 // Render the add result page
 module.exports.addResult = async (req, res)=>{
-    console.log(req.params);
     const company = await Company.findById(req.params.id)
     .populate({
         path: 'result',
@@ -77,4 +76,9 @@ module.exports.addResult = async (req, res)=>{
         company: company,
         helper: helper
     });
+}
+// store result
+module.exports.storeResult = async (req, res)=>{
+    console.log(req.body);
+    res.redirect('back');
 }

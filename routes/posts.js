@@ -14,6 +14,8 @@ router.post('/create-company', passport.checkAuthentication, postController.crea
 // renders the company list
 router.get('/company-list', passport.checkAuthentication, postController.companyList);
 // allows the user to add result to the company/Interview post
-router.get('/add-result/:id',  passport.checkAuthentication, postController.addResult)
+router.get('/add-result/:id',  passport.checkAuthentication, postController.addResult);
+
+router.post('/store-result/:id', passport.checkAuthentication, postController.storeResult);
 
 module.exports = router;
