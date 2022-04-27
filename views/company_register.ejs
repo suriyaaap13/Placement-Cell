@@ -1,4 +1,4 @@
-<div class="row w-100 min-vh-100 mt-5 pt-4">
+<div class="row w-100 min-vh-100">
     <section class="col-md-4 border border-top-0" style="background: #eee; background-image: url(/images/bg-form.png);">
         <div>
             <div class="d-flex align-items-center justify-content-center h3 py-5">
@@ -50,11 +50,13 @@
     
     <section class="col-md-8 bg-light" style="background: #f8f9fa; background-image: url(/images/bg-table.png);">
         <div class="w-100">
+            <!-- Heading -->
             <h2 class="d-flex align-items-center justify-content-center h3 py-5">
                 Company Register 
             </h2>
             <div class="row mx-3" id="company-content">
                 <% company.forEach((element)=>{ %>
+                    <!-- Company Card -->
                 <div class="col-sm-4 mb-5">
                     <div class="card">
                         <div class="card-body">
@@ -63,9 +65,8 @@
                                     <h5 class="card-title"><%= element.companyName %></h5>
                                     <h6 class="card-subtitle mb-2 text-muted"><%= helper.convert(element.doi) %></h6>
                                 </div>
-                                <% if(false){ %>
+                                <% if(company.Selection=="onHold"){ %>
                                     <div class="">
-                                        <!-- <i class="text-success fa-2x fa-regular fa-circle-check"></i> -->
                                         <i class="text-warning fa-2x fa-regular fa-hourglass"></i>
                                     </div>
                                 <% }else{%> 
@@ -78,8 +79,7 @@
                             
                             
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <!-- <a href="#" class="card-link">Card link</a> -->
-                            <% if(false){ %>
+                            <% if(company.Selection=="onHold"){ %>
                                 <a href="#" class="card-link">Add Result</a>
                             <% }else{ %>
                                 <a href="#" class="card-link">View Result</a>
@@ -90,30 +90,7 @@
                 </div>
                 <% }); %>
                 
-                <!-- <% company.forEach((element)=>{ %>
-                    <div class="col-sm-4 mb-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <span class="text-danger" style="font-weight: 700;">
-                                    <%= element.companyName %>
-                                </span>
-                                 Conducted an Interview on 
-                                 <span class="text-primary" style="font-weight: 700;">
-                                    <%= helper.convert(element.doi) %>
-                                 </span>
-                                 the alloted students are
-                            </div>
-                            <ul class="list-group p-2">
-                                <% element.students.forEach((std)=>{ %>
-                                    <li class="list-group-item list-group-item-dark" id="student-list-item-<%= std._id %>">
-                                        <%= std.studentName %>
-                                    </li>
-                                <% }) %>
-                            </ul>
-                            
-                        </div>
-                    </div>
-                <% }); %> -->
+                
             </div>
         </div>  
     </section>

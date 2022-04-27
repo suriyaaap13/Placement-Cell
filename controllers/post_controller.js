@@ -17,7 +17,15 @@ module.exports.createStudent = async (req, res)=>{
 module.exports.companyForm = async (req, res)=>{
     // Taking the students who are not placed and sending it to the company form to render
     const jobless = await Student.find({status: "Not Placed"});
-    const company = await Company.find({}).populate('students');
+    const company = await Company.find({})
+    .populate({
+        path: 'result',
+        populate: {
+            path: 'student',
+            model: 'Student'
+        }
+    });
+    console.log(company[0].result);
     return res.render('company_register', {
         title: "Add Company Form",
         jobless: jobless,
@@ -27,8 +35,22 @@ module.exports.companyForm = async (req, res)=>{
 }
 // save the company data
 module.exports.createCompany = async (req, res)=>{
-    await Company.create(req.body);
-    const allotedStudents = await req.body.students;
+    const std = req.body.students;
+    const resultBody = [];
+    std.forEach((element)=>{
+        let obj = {
+            student: element,
+            value: false
+        }
+        resultBody.push(obj);
+    });
+    console.log(resultBody);
+    const hi = await Company.create({
+        companyName: req.body.companyName,
+        doi: req.body.doi,
+        result: resultBody
+    });
+    console.log(hi);
     return res.redirect('/posts/company');
 }
 // Display interview list

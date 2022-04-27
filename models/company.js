@@ -8,12 +8,16 @@ const companySchema = new mongoose.Schema({
         type: Date,
         required: true
     },
-    students: [
-        {
+    result: [{
+        student: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Student'
+        },
+        value: {
+            type: Boolean,
+            default: false
         }
-    ]
+    }]
 },{
     timestamps: true
 });
