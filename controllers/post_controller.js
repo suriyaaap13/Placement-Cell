@@ -79,6 +79,31 @@ module.exports.addResult = async (req, res)=>{
 }
 // store result
 module.exports.storeResult = async (req, res)=>{
-    console.log(req.body);
-    res.redirect('back');
+    const selected = req.body.id;
+    const student = await Student.findById(req.body.id);
+    const company = await Company.findById(req.params.id);
+    await company.result.forEach(async (element)=>{
+        if(selected.includes(element.student.valueOf())){
+            await Company.findByIdAndUpdate(req.params.id, {$pull: {result: {_id: element._id}}});
+        }
+    });
+    if(Array.isArray(selected)){
+        await selected.forEach((element)=>{
+            const update = {
+                student: element,
+                value: true
+            }
+            company.result.push(update);
+        });
+       
+    }else{
+        const update = {
+            student: selected,
+            value: true
+        }
+        company.result.push(update);
+    }
+    company.flag = true;
+    await company.save();
+    res.redirect('/posts/company');
 }

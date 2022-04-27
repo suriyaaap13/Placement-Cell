@@ -16,7 +16,7 @@
                     <% company.result.forEach((std)=>{ %>
                         <li class="list-group-item list-group-item-dark" id="student-list-item-<%= std._id %>">
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" name="<%=  %>" class="custom-control-input" id="check5">
+                                <input type="checkbox" name="id" value="<%= std.student._id %>" class="custom-control-input" id="check5">
                                 <label class="custom-control-label" for="check5">
                                     <%= std.student.studentName %>
                                 </label>
