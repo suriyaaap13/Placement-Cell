@@ -1,0 +1,30 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+    <h2 class="text-white">
+        Interview Register 
+    </h2>
+    <div class="row" id="company-content">
+            <div class="col-10 mb-2">
+                <div class="card">
+                    <div class="card-body">
+                        <span class="text-danger" style="font-weight: 700;">
+                            <%= company.companyName %>
+                        </span>
+                         Conducted an Interview on 
+                         <span class="text-primary" style="font-weight: 700;">
+                            <%= helper.convert(company.doi) %>
+                         </span>
+                         the alloted students are
+                    </div>
+                    <ul class="list-group p-2">
+                        <% company.result.forEach((std)=>{ %>
+                            <li class="list-group-item list-group-item-dark" id="student-list-item-<%= std._id %>">
+                                <%= std.student.studentName %>
+                            </li>
+                        <% }) %>
+                    </ul>
+                    
+                </div>
+            </div>
+    </div>
+</div>
+<script src="/js/result.js"></script>

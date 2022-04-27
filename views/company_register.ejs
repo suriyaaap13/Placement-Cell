@@ -65,7 +65,7 @@
                                     <h5 class="card-title"><%= element.companyName %></h5>
                                     <h6 class="card-subtitle mb-2 text-muted"><%= helper.convert(element.doi) %></h6>
                                 </div>
-                                <% if(company.Selection=="onHold"){ %>
+                                <% if(!element.flag){ %>
                                     <div class="">
                                         <i class="text-warning fa-2x fa-regular fa-hourglass"></i>
                                     </div>
@@ -79,10 +79,10 @@
                             
                             
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <% if(company.Selection=="onHold"){ %>
-                                <a href="#" class="card-link">Add Result</a>
+                            <% if(!element.flag){ %>
+                                <a href="/posts/add-result/<%= element._id %>" class="card-link">Add Result</a>
                             <% }else{ %>
-                                <a href="#" class="card-link">View Result</a>
+                                <a href="/posts/show-result/<%= element._id %>" class="card-link">View Result</a>
                             <% } %>
                             
                         </div>
@@ -98,4 +98,3 @@
     
 </div>
 <script src="/js/company.js"></script>
-<script src="/js/interview_register.js"></script>

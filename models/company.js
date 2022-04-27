@@ -8,6 +8,10 @@ const companySchema = new mongoose.Schema({
         type: Date,
         required: true
     },
+    flag: {
+        type: Boolean,
+        default: false
+    },
     result: [{
         student: {
             type: mongoose.Schema.Types.ObjectId,

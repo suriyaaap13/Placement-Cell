@@ -25,7 +25,6 @@ module.exports.companyForm = async (req, res)=>{
             model: 'Student'
         }
     });
-    console.log(company[0].result);
     return res.render('company_register', {
         title: "Add Company Form",
         jobless: jobless,
@@ -58,6 +57,23 @@ module.exports.companyList = async (req, res)=>{
     const company = await Company.find({}).populate('students');
     res.render('interview_register',{
         title: "Interview Register",
+        company: company,
+        helper: helper
+    });
+}
+// Render the add result page
+module.exports.addResult = async (req, res)=>{
+    console.log(req.params);
+    const company = await Company.findById(req.params.id)
+    .populate({
+        path: 'result',
+        populate: {
+            path: 'student',
+            model: 'Student'
+        }
+    });
+    return res.render('result', {
+        title: "Add-Result",
         company: company,
         helper: helper
     });

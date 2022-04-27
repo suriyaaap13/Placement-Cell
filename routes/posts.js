@@ -12,6 +12,8 @@ router.get('/company', passport.checkAuthentication, postController.companyForm)
 // posts student data to the db
 router.post('/create-company', passport.checkAuthentication, postController.createCompany);
 // renders the company list
-router.get('/company-list', passport.checkAuthentication, postController.companyList)
+router.get('/company-list', passport.checkAuthentication, postController.companyList);
+// allows the user to add result to the company/Interview post
+router.get('/add-result/:id',  passport.checkAuthentication, postController.addResult)
 
 module.exports = router;
