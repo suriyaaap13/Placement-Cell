@@ -19,7 +19,7 @@ module.exports.table = async (req, res)=>{
                 const newData = {
                     "Student Id": e2.student.studentId,
                     "Student Name": e2.student.studentName,
-                    "collegeName": e2.student.collegeName,
+                    "College Name": e2.student.collegeName,
                     "DSA Score": e2.student.dsa,
                     "Web-Dev Score": e2.student.webd,
                     "React Score": e2.student.react,

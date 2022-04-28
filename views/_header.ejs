@@ -24,6 +24,7 @@
 
     <!-- Navbar -->
     <header class=" navbar navbar-light bg-light navbar-default shadow p-3 fixed-header bg-white rounded">
+      <!-- Logo and Name -->
       <div class="container-fluid">
         <a class="navbar-brand text-dark " href="#" >
           <i class="fa-2x fa-solid fa-arrow-up-right-dots"></i>
@@ -31,11 +32,18 @@
             Codelada | Placement-Cell
           </span>
         </a>
+        
+        <!-- Navigation menu  -->
         <% if(locals.user){ %>
           <!-- Home and signout btn if user is logged in -->
           <div class="d-flex">
+            <!-- <a href="/table">
+              <button type="button" class="btn btn-sm btn-outline-dark me-2">
+                <i class="fa-solid fa-file-arrow-down"></i>
+              </button>
+            </a> -->
             <a href="/">
-              <button type="button" id="add-student">Add Student</button>
+              <button type="button " id="add-student">Add Student</button>
             </a>
             <a href="/posts/company">
               <button type="button" id="create-interview">Create Interview</button>

@@ -4,6 +4,7 @@
             <div class="d-flex align-items-center justify-content-center h3 py-5">
                 Company Form
             </div>
+            
             <form action="/posts/create-company" method="post">
                 <!-- Contains Company Name -->
                 <div class="row text-dark my-3 px-4">
@@ -51,8 +52,9 @@
     <section class="col-md-8 bg-light" style="background: #f8f9fa; background-image: url(/images/bg-table.png);">
         <div class="w-100">
             <!-- Heading -->
-            <h2 class="d-flex align-items-center justify-content-center h3 py-5">
-                Company Register 
+            <h2 class="d-flex align-items-center justify-content-around  py-5">
+                <div class="h3">Company Register</div>
+                
             </h2>
             <div class="row mx-3" id="company-content">
                 <% company.forEach((element)=>{ %>
