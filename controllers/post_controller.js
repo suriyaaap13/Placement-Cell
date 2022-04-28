@@ -101,9 +101,11 @@ module.exports.storeResult = async (req, res)=>{
                 student: element,
                 value: true
             }
+            await company.result.push(update);
+        });
+        await selected.forEach(async (element)=>{
             const student = await Student.findByIdAndUpdate(element, {status: "Placed"});
             await student.save();
-            await company.result.push(update);
         });
        
     }else{
