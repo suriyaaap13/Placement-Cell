@@ -5,17 +5,19 @@
 
 
 <div class=" row">
+  <!-- Student Form section  -->
   <section class="col-md-4 border border-top-0 border-left-0 " style="background: #eee; background-image: url(/images/bg-form.png);">
+    <!-- Student Form Heading -->
     <div class="d-flex align-items-center justify-content-center h3 py-5 ">
       Student Form
     </div>
     <div class="container-fluid ">
       <form action="/posts/create-student" method="post">
-          <!-- Contains Student Name -->
+          <!-- Contains Student Id -->
           <div class="row text-white my-3">
               <div class="col-sm-12">
                   <label for="studentId"></label>
-                  <input type="text" class="form-control" id="studentId" name="studentId" placeholder="Student Id" required>
+                  <input type="text" class="form-control" id="studentId" name="studentId" placeholder="Student Id (Batch_No - RollNo)" required>
               </div>
           </div>
           <!-- Contains Student Name -->
@@ -97,6 +99,7 @@
       </form>
     </div>
   </section>
+  <!-- Student data table -->
   <section class="col-md-8" style="background: #f8f9fa; background-image: url(/images/bg-table.png);">
     <div class="table-responsive-md min-vh-100">
       <div class="h3 p-3 d-flex align-items-center justify-content-center">
