@@ -77,9 +77,11 @@ module.exports.addResult = async (req, res)=>{
             model: 'Student'
         }
     });
-    return res.render('result', {
+    const companies = await Company.find({});
+    return res.render('add_result', {
         title: "Add-Result",
         company: company,
+        companies: companies,
         helper: helper
     });
 }
@@ -127,9 +129,11 @@ module.exports.showResult = async (req, res)=>{
             model: 'Student'
         }
     });
+    const companies = await Company.find({});
     res.render('view_result',{
         title: "View Result",
         company: company,
-        helper: helper
+        helper: helper,
+        companies: companies
     });
 }

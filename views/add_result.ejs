@@ -1,5 +1,5 @@
 <div class="row min-vh-100">
-    <!-- View Result Section -->
+    <!-- Add result section -->
     <section class="col-md-4 border border-top-0" style="background: #eee; background-image: url(/images/bg-form.png);" >
         <div class="m-3">
             <div class="col-12">
@@ -12,24 +12,28 @@
                             <span class="text-primary" style="font-weight: 700;">
                             <%= helper.convert(company.doi) %>
                             </span>
-                            the alloted students are listed below and the selected Students are given a green shade.
+                            the alloted students are mentioned below. <b>Check the students who are selected</b>
                     </div>
                     <form action="/posts/store-result/<%= company._id %>" method="post">
                         <ul class="list-group p-2">
                             <% company.result.forEach((std)=>{ %>
-                                <% if(std.value){ %>
-                                    <li class="list-group-item list-group-item-success" id="student-list-item-<%= std._id %>">
-                                        <%= std.student.studentName %>
-                                    </li>
-                                <% }else{ %>
-                                    <li class="list-group-item list-group-item-danger" id="student-list-item-<%= std._id %>">
-                                        <%= std.student.studentName %>
-                                    </li>
-                                <% } %>
-                                
+                                <li class="list-group-item list-group-item-dark" id="student-list-item-<%= std._id %>">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" name="id" value="<%= std.student._id %>" class="custom-control-input" id="check5">
+                                        <label class="custom-control-label" for="check5">
+                                            <%= std.student.studentId %> --- <%= std.student.studentName %>
+                                        </label>
+                                    </div>
+                                </li>
                             <% }) %>
                         </ul>
+                        <div class="d-flex justify-content-center align-items-center my-3">
+                            <button class="btn btn-outline-primary" type="submit">Submit</button>
+                        </div>
+                        
                     </form>
+                    
+                    
                 </div>
             </div>
         </div>
