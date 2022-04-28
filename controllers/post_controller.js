@@ -77,7 +77,7 @@ module.exports.addResult = async (req, res)=>{
         helper: helper
     });
 }
-// store result
+// store result in database
 module.exports.storeResult = async (req, res)=>{
     const selected = req.body.id;
     const student = await Student.findById(req.body.id);
@@ -105,5 +105,21 @@ module.exports.storeResult = async (req, res)=>{
     }
     company.flag = true;
     await company.save();
-    res.redirect('/posts/company');
+    return res.redirect('/posts/company');
+}
+// show result of the specific interview
+module.exports.showResult = async (req, res)=>{
+    const company = await Company.findById(req.params.id)
+    .populate({
+        path: "result",
+        populate: {
+            path: 'student',
+            model: 'Student'
+        }
+    });
+    res.render('view_result',{
+        title: "View Result",
+        company: company,
+        helper: helper
+    });
 }

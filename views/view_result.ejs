@@ -1,0 +1,33 @@
+<div class="d-flex justify-content-center my-5 min-vh-100">
+    <div class="col-7">
+        <div class="card">
+            <div class="card-body">
+                <span class="text-danger" style="font-weight: 700;">
+                    <%= company.companyName %>
+                </span>
+                    Conducted an Interview on 
+                    <span class="text-primary" style="font-weight: 700;">
+                    <%= helper.convert(company.doi) %>
+                    </span>
+                    the alloted students are
+            </div>
+            <form action="/posts/store-result/<%= company._id %>" method="post">
+                <ul class="list-group p-2">
+                    <% company.result.forEach((std)=>{ %>
+                        <% if(std.value){ %>
+                            <li class="list-group-item list-group-item-success" id="student-list-item-<%= std._id %>">
+                                <%= std.student.studentName %>
+                            </li>
+                        <% }else{ %>
+                            <li class="list-group-item list-group-item-dark" id="student-list-item-<%= std._id %>">
+                                <%= std.student.studentName %>
+                            </li>
+                        <% } %>
+                        
+                    <% }) %>
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="/js/result.js"></script>
