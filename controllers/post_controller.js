@@ -36,20 +36,26 @@ module.exports.companyForm = async (req, res)=>{
 module.exports.createCompany = async (req, res)=>{
     const std = req.body.students;
     const resultBody = [];
-    std.forEach((element)=>{
+    if(Array.isArray(std)){
+        std.forEach((element)=>{
+            let obj = {
+                student: element,
+                value: false
+            }
+            resultBody.push(obj);
+        });
+    }else{
         let obj = {
-            student: element,
+            student: std,
             value: false
         }
         resultBody.push(obj);
-    });
-    console.log(resultBody);
+    }
     const hi = await Company.create({
         companyName: req.body.companyName,
         doi: req.body.doi,
         result: resultBody
     });
-    console.log(hi);
     return res.redirect('/posts/company');
 }
 // Display interview list
@@ -88,12 +94,14 @@ module.exports.storeResult = async (req, res)=>{
         }
     });
     if(Array.isArray(selected)){
-        await selected.forEach((element)=>{
+        await selected.forEach(async (element)=>{
             const update = {
                 student: element,
                 value: true
             }
-            company.result.push(update);
+            const student = await Student.findByIdAndUpdate(element, {status: "Placed"});
+            await student.save();
+            await company.result.push(update);
         });
        
     }else{
@@ -101,6 +109,8 @@ module.exports.storeResult = async (req, res)=>{
             student: selected,
             value: true
         }
+        const student = await Student.findByIdAndUpdate(selected, {status: "Placed"});
+        await student.save();
         company.result.push(update);
     }
     company.flag = true;
