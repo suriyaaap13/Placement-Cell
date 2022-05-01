@@ -11,8 +11,9 @@
     <div class="d-flex align-items-center justify-content-center h3 py-5 ">
       Student Form
     </div>
+    <!-- Student form container -->
     <div class="container-fluid ">
-      <form action="/posts/create-student" method="post">
+      <form action="/posts/create-student" id="new-student-form" method="post">
           <!-- Contains Student Id -->
           <div class="row text-white my-3">
               <div class="col-sm-12">
@@ -104,14 +105,6 @@
     <div class="table-responsive-md min-vh-100">
       <div class="h3 p-3 d-flex align-items-center justify-content-center">
           Student Details
-      </div>
-      <div class="d-flex justify-content-end mx-3 mb-2">
-        <a href="/table">
-          <button type="button" class="btn btn-sm btn-outline-primary me-2">
-            Download
-            <i class="fa-solid fa-file-arrow-down"></i>
-          </button>
-        </a>
       </div>
       <table id="example" class="table table-hover ">
         <thead >

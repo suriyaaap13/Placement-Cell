@@ -8,6 +8,3 @@ module.exports.home = async function(req, res){
         helper: helper
     });
 }
-{/* <td><%= element.companyName %></td>
-<td><%= helper.convert(element.doi) %></td>
-<td><%= element.result %></td> */}

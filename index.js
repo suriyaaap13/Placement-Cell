@@ -27,7 +27,7 @@ app.set("layout extractScripts", true);
 app.use(session({
     name: 'PlacementCell',
     // Change before deployment
-    secret: process.env.SECRET,
+    secret: pennygetyourownwifinospaces,
     saveUninitialized: false,
     resave: false,
     cookie: {
