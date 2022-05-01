@@ -37,6 +37,7 @@ A company constantly needs to download their data to compile different reports. 
 
 ## Functionality
 The functionalities that are implemented in this project include
+    
     1. Employee Sign Up and Sign In
     2. Add Student 
     3. Add Interview
