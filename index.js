@@ -34,7 +34,7 @@ app.use(session({
         maxAge: 1000*24*365
     },
     store: MongoStore.create({
-        mongoUrl: 'mongodb://localhost:27017/PlacementCell_development',
+        mongoUrl: 'mongodb+srv://admin_suriyaa:Senthil3%40@cluster0.ial60.mongodb.net/PlacementCell_development',
         autoRemove: 'disabled'
     },function(err){
         if(err){console.log(err);}
