@@ -36,16 +36,13 @@ A company constantly needs to download their data to compile different reports. 
    * To run the project type **npm start** in the terminal
 
 ## Functionality
-
-### Employee Sign Up and Sign In
-
-### Add Student 
-
-### Add Interview
-
-### Add Result
-
-### View Result
+The functionalities that are implemented in this project include
+    1. Employee Sign Up and Sign In
+    2. Add Student 
+    3. Add Interview
+    4. Add Result
+    5. View Result
+    6. Download Table
    
 ## Status
 The Project is not completly developed, Features such as 
