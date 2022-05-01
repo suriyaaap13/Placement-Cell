@@ -48,8 +48,11 @@ app.use(passport.setAuthenticatedUser);
 app.use('/', require('./routes/index'));
 
 
-const PORT = 3000;
-app.listen(PORT, function(err){
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+app.listen(port, function(err){
     if(err){console.log("Error in listening to the Server", err);}
-    console.log(`Server is up and running in Port ${PORT}`);
+    console.log(`Server is up and running `);
 });
