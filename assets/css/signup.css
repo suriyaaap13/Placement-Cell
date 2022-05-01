@@ -6,8 +6,6 @@ body{
   body .text-center{
     display: flex;
     align-items: center;
-    /* padding-top: 130px; */
-    /* padding-bottom: 40px; */
   }
   
   .form-signup {

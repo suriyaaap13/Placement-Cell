@@ -1,7 +1,5 @@
 
 body{
-
-    /* height: 100vh; */
     background-color: #f7f7f7;
 }
 .fixed-header{
@@ -12,8 +10,6 @@ body{
 body .text-center{
     display: flex;
     align-items: center;
-    /* padding-top: 80px; */
-    /* padding-bottom: 40px; */
 }
   
   

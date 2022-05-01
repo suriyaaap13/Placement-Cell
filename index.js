@@ -14,11 +14,13 @@ const MongoStore = require('connect-mongo');
 const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
+// set path for static files
 app.use(express.static('./assets'));
 
 // set up the view engine
 app.set('view engine', 'ejs');
 app.set('views', './views');
+// set up layouts
 app.use(expressLayouts);
 app.set("layout extractStyles", true);
 app.set("layout extractScripts", true);
@@ -26,15 +28,14 @@ app.set("layout extractScripts", true);
 // using express-session
 app.use(session({
     name: 'PlacementCell',
-    // Change before deployment
-    secret: "pennygetyourownwifinospaces",
+    secret: process.env.SECRET,
     saveUninitialized: false,
     resave: false,
     cookie: {
         maxAge: 1000*24*365
     },
     store: MongoStore.create({
-        mongoUrl: 'mongodb+srv://admin_suriyaa:Senthil3%40@cluster0.ial60.mongodb.net/PlacementCell_development',
+        mongoUrl: process.env.Mongodb_Atlas_URL,
         autoRemove: 'disabled'
     },function(err){
         if(err){console.log(err);}
@@ -47,7 +48,7 @@ app.use(passport.setAuthenticatedUser);
 
 app.use('/', require('./routes/index'));
 
-
+// setting the port
 let port = process.env.PORT;
 if (port == null || port == "") {
   port = 3000;

@@ -1,3 +1,4 @@
+// Converts a date in dd-mm-yyy format
 module.exports.convert = function(str) {
     str = str.toString();
     date = str.substring(0,11);

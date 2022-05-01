@@ -14,6 +14,7 @@
                             </span>
                             the alloted students are mentioned below. <b>Check the students who are selected</b>
                     </div>
+                    <!-- Form that stores the result -->
                     <form action="/posts/store-result/<%= company._id %>" method="post">
                         <ul class="list-group p-2">
                             <% company.result.forEach((std)=>{ %>

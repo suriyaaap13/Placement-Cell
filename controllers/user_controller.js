@@ -1,9 +1,9 @@
 const User = require('../models/user');
 const md5 = require('md5');
 
+// Creates a new user
 module.exports.create = async function(req, res){
     if(req.body.password!=req.body.confirm_password){
-        // req.flash('error','Password and confirm password doesnot match');
         res.redirect('back');
     }else{
         try{
@@ -47,6 +47,5 @@ module.exports.signUp = function(req, res){
 }
 module.exports.signOut = function (req, res){
     req.logout();
-    // req.flash('success', 'Logged Out Successfully');
     return res.redirect('/users/signin');
 }

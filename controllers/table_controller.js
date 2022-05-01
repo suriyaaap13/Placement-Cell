@@ -12,7 +12,7 @@ module.exports.table = async (req, res)=>{
         }
     });
     const data = [];
-    // Student Id , student Name, college Name, dsa, webd, react, status, company Name, doi, result 
+    // iterates through the Company data base and fetches all the students info and their results  
     await company.forEach((element)=>{
         if(element.flag){
             element.result.forEach((e2)=>{
@@ -50,9 +50,8 @@ module.exports.table = async (req, res)=>{
         
     });
     
-
+    // make the fetched data ready to download
     const csvString = await json2csv(data);
     await res.set('Content-Type', 'text/csv');
     res.status(200).send(csvString);
-    // return res.redirect('back');
 }

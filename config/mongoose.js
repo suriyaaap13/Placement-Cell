@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // mongoose.connect('mongodb://localhost:27017/PlacementCell_development');
 
-mongoose.connect("mongodb+srv://admin_suriyaa:Senthil3%40@cluster0.ial60.mongodb.net/PlacementCell_development");
+mongoose.connect(process.env.Mongodb_Atlas_URL);
 
 const db = mongoose.connection;
 
