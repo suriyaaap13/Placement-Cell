@@ -27,8 +27,5 @@
     "mongoose": "^6.3.0",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0"
-  },
-  "devDependencies": {
-    
   }
 }
