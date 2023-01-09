@@ -53,5 +53,3 @@ The Project is not completly developed, Features such as
   4. Flash Messages can be implemented for better user experience
   5. Edit buttons can be implemented throughout all the functionality.
   
-## Link
-https://obscure-castle-82355.herokuapp.com/
